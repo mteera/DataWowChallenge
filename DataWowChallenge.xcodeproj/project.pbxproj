@@ -1,0 +1,618 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B5924F0E2BF2621900A09409 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5924F0D2BF2621900A09409 /* AppDelegate.swift */; };
+		B5924F122BF2621900A09409 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5924F112BF2621900A09409 /* ListViewController.swift */; };
+		B5924F172BF2621A00A09409 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5924F162BF2621A00A09409 /* Assets.xcassets */; };
+		B5924F1A2BF2621A00A09409 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = B5924F192BF2621A00A09409 /* Base */; };
+		B5924F252BF2621A00A09409 /* DataWowChallengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5924F242BF2621A00A09409 /* DataWowChallengeTests.swift */; };
+		B5924F2F2BF2621A00A09409 /* DataWowChallengeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5924F2E2BF2621A00A09409 /* DataWowChallengeUITests.swift */; };
+		B5924F312BF2621A00A09409 /* DataWowChallengeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5924F302BF2621A00A09409 /* DataWowChallengeUITestsLaunchTests.swift */; };
+		B5924F3E2BF2623600A09409 /* ListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5924F3D2BF2623600A09409 /* ListViewController.xib */; };
+		B5924F422BF262A500A09409 /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5924F412BF262A500A09409 /* ListViewModel.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B5924F212BF2621A00A09409 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B5924F022BF2621900A09409 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B5924F092BF2621900A09409;
+			remoteInfo = DataWowChallenge;
+		};
+		B5924F2B2BF2621A00A09409 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B5924F022BF2621900A09409 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B5924F092BF2621900A09409;
+			remoteInfo = DataWowChallenge;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		B5924F0A2BF2621900A09409 /* DataWowChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DataWowChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B5924F0D2BF2621900A09409 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		B5924F112BF2621900A09409 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
+		B5924F162BF2621A00A09409 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B5924F192BF2621A00A09409 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		B5924F1B2BF2621A00A09409 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B5924F202BF2621A00A09409 /* DataWowChallengeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DataWowChallengeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B5924F242BF2621A00A09409 /* DataWowChallengeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataWowChallengeTests.swift; sourceTree = "<group>"; };
+		B5924F2A2BF2621A00A09409 /* DataWowChallengeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DataWowChallengeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B5924F2E2BF2621A00A09409 /* DataWowChallengeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataWowChallengeUITests.swift; sourceTree = "<group>"; };
+		B5924F302BF2621A00A09409 /* DataWowChallengeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataWowChallengeUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		B5924F3D2BF2623600A09409 /* ListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListViewController.xib; sourceTree = "<group>"; };
+		B5924F412BF262A500A09409 /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B5924F072BF2621900A09409 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B5924F1D2BF2621A00A09409 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B5924F272BF2621A00A09409 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B5924F012BF2621900A09409 = {
+			isa = PBXGroup;
+			children = (
+				B5924F0C2BF2621900A09409 /* DataWowChallenge */,
+				B5924F232BF2621A00A09409 /* DataWowChallengeTests */,
+				B5924F2D2BF2621A00A09409 /* DataWowChallengeUITests */,
+				B5924F0B2BF2621900A09409 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		B5924F0B2BF2621900A09409 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B5924F0A2BF2621900A09409 /* DataWowChallenge.app */,
+				B5924F202BF2621A00A09409 /* DataWowChallengeTests.xctest */,
+				B5924F2A2BF2621A00A09409 /* DataWowChallengeUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B5924F0C2BF2621900A09409 /* DataWowChallenge */ = {
+			isa = PBXGroup;
+			children = (
+				B5924F3F2BF2626B00A09409 /* Scenes */,
+				B5924F0D2BF2621900A09409 /* AppDelegate.swift */,
+				B5924F162BF2621A00A09409 /* Assets.xcassets */,
+				B5924F182BF2621A00A09409 /* LaunchScreen.storyboard */,
+				B5924F1B2BF2621A00A09409 /* Info.plist */,
+			);
+			path = DataWowChallenge;
+			sourceTree = "<group>";
+		};
+		B5924F232BF2621A00A09409 /* DataWowChallengeTests */ = {
+			isa = PBXGroup;
+			children = (
+				B5924F242BF2621A00A09409 /* DataWowChallengeTests.swift */,
+			);
+			path = DataWowChallengeTests;
+			sourceTree = "<group>";
+		};
+		B5924F2D2BF2621A00A09409 /* DataWowChallengeUITests */ = {
+			isa = PBXGroup;
+			children = (
+				B5924F2E2BF2621A00A09409 /* DataWowChallengeUITests.swift */,
+				B5924F302BF2621A00A09409 /* DataWowChallengeUITestsLaunchTests.swift */,
+			);
+			path = DataWowChallengeUITests;
+			sourceTree = "<group>";
+		};
+		B5924F3F2BF2626B00A09409 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				B5924F402BF2627000A09409 /* List */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		B5924F402BF2627000A09409 /* List */ = {
+			isa = PBXGroup;
+			children = (
+				B5924F412BF262A500A09409 /* ListViewModel.swift */,
+				B5924F112BF2621900A09409 /* ListViewController.swift */,
+				B5924F3D2BF2623600A09409 /* ListViewController.xib */,
+			);
+			path = List;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B5924F092BF2621900A09409 /* DataWowChallenge */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B5924F342BF2621A00A09409 /* Build configuration list for PBXNativeTarget "DataWowChallenge" */;
+			buildPhases = (
+				B5924F062BF2621900A09409 /* Sources */,
+				B5924F072BF2621900A09409 /* Frameworks */,
+				B5924F082BF2621900A09409 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DataWowChallenge;
+			productName = DataWowChallenge;
+			productReference = B5924F0A2BF2621900A09409 /* DataWowChallenge.app */;
+			productType = "com.apple.product-type.application";
+		};
+		B5924F1F2BF2621A00A09409 /* DataWowChallengeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B5924F372BF2621A00A09409 /* Build configuration list for PBXNativeTarget "DataWowChallengeTests" */;
+			buildPhases = (
+				B5924F1C2BF2621A00A09409 /* Sources */,
+				B5924F1D2BF2621A00A09409 /* Frameworks */,
+				B5924F1E2BF2621A00A09409 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B5924F222BF2621A00A09409 /* PBXTargetDependency */,
+			);
+			name = DataWowChallengeTests;
+			productName = DataWowChallengeTests;
+			productReference = B5924F202BF2621A00A09409 /* DataWowChallengeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		B5924F292BF2621A00A09409 /* DataWowChallengeUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B5924F3A2BF2621A00A09409 /* Build configuration list for PBXNativeTarget "DataWowChallengeUITests" */;
+			buildPhases = (
+				B5924F262BF2621A00A09409 /* Sources */,
+				B5924F272BF2621A00A09409 /* Frameworks */,
+				B5924F282BF2621A00A09409 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B5924F2C2BF2621A00A09409 /* PBXTargetDependency */,
+			);
+			name = DataWowChallengeUITests;
+			productName = DataWowChallengeUITests;
+			productReference = B5924F2A2BF2621A00A09409 /* DataWowChallengeUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B5924F022BF2621900A09409 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1530;
+				LastUpgradeCheck = 1530;
+				TargetAttributes = {
+					B5924F092BF2621900A09409 = {
+						CreatedOnToolsVersion = 15.3;
+					};
+					B5924F1F2BF2621A00A09409 = {
+						CreatedOnToolsVersion = 15.3;
+						TestTargetID = B5924F092BF2621900A09409;
+					};
+					B5924F292BF2621A00A09409 = {
+						CreatedOnToolsVersion = 15.3;
+						TestTargetID = B5924F092BF2621900A09409;
+					};
+				};
+			};
+			buildConfigurationList = B5924F052BF2621900A09409 /* Build configuration list for PBXProject "DataWowChallenge" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = B5924F012BF2621900A09409;
+			productRefGroup = B5924F0B2BF2621900A09409 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B5924F092BF2621900A09409 /* DataWowChallenge */,
+				B5924F1F2BF2621A00A09409 /* DataWowChallengeTests */,
+				B5924F292BF2621A00A09409 /* DataWowChallengeUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B5924F082BF2621900A09409 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B5924F172BF2621A00A09409 /* Assets.xcassets in Resources */,
+				B5924F1A2BF2621A00A09409 /* Base in Resources */,
+				B5924F3E2BF2623600A09409 /* ListViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B5924F1E2BF2621A00A09409 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B5924F282BF2621A00A09409 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B5924F062BF2621900A09409 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B5924F122BF2621900A09409 /* ListViewController.swift in Sources */,
+				B5924F0E2BF2621900A09409 /* AppDelegate.swift in Sources */,
+				B5924F422BF262A500A09409 /* ListViewModel.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B5924F1C2BF2621A00A09409 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B5924F252BF2621A00A09409 /* DataWowChallengeTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B5924F262BF2621A00A09409 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B5924F312BF2621A00A09409 /* DataWowChallengeUITestsLaunchTests.swift in Sources */,
+				B5924F2F2BF2621A00A09409 /* DataWowChallengeUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B5924F222BF2621A00A09409 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B5924F092BF2621900A09409 /* DataWowChallenge */;
+			targetProxy = B5924F212BF2621A00A09409 /* PBXContainerItemProxy */;
+		};
+		B5924F2C2BF2621A00A09409 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B5924F092BF2621900A09409 /* DataWowChallenge */;
+			targetProxy = B5924F2B2BF2621A00A09409 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		B5924F182BF2621A00A09409 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B5924F192BF2621A00A09409 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		B5924F322BF2621A00A09409 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		B5924F332BF2621A00A09409 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B5924F352BF2621A00A09409 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = FCQA3D4ES5;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = DataWowChallenge/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = chaceteera.DataWowChallenge;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		B5924F362BF2621A00A09409 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = FCQA3D4ES5;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = DataWowChallenge/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = chaceteera.DataWowChallenge;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		B5924F382BF2621A00A09409 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = FCQA3D4ES5;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = chaceteera.DataWowChallengeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DataWowChallenge.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/DataWowChallenge";
+			};
+			name = Debug;
+		};
+		B5924F392BF2621A00A09409 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = FCQA3D4ES5;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = chaceteera.DataWowChallengeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DataWowChallenge.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/DataWowChallenge";
+			};
+			name = Release;
+		};
+		B5924F3B2BF2621A00A09409 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = FCQA3D4ES5;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = chaceteera.DataWowChallengeUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = DataWowChallenge;
+			};
+			name = Debug;
+		};
+		B5924F3C2BF2621A00A09409 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = FCQA3D4ES5;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = chaceteera.DataWowChallengeUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = DataWowChallenge;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B5924F052BF2621900A09409 /* Build configuration list for PBXProject "DataWowChallenge" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B5924F322BF2621A00A09409 /* Debug */,
+				B5924F332BF2621A00A09409 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B5924F342BF2621A00A09409 /* Build configuration list for PBXNativeTarget "DataWowChallenge" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B5924F352BF2621A00A09409 /* Debug */,
+				B5924F362BF2621A00A09409 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B5924F372BF2621A00A09409 /* Build configuration list for PBXNativeTarget "DataWowChallengeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B5924F382BF2621A00A09409 /* Debug */,
+				B5924F392BF2621A00A09409 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B5924F3A2BF2621A00A09409 /* Build configuration list for PBXNativeTarget "DataWowChallengeUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B5924F3B2BF2621A00A09409 /* Debug */,
+				B5924F3C2BF2621A00A09409 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B5924F022BF2621900A09409 /* Project object */;
+}
