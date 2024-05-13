@@ -16,6 +16,11 @@
 		B5924F312BF2621A00A09409 /* DataWowChallengeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5924F302BF2621A00A09409 /* DataWowChallengeUITestsLaunchTests.swift */; };
 		B5924F3E2BF2623600A09409 /* ListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5924F3D2BF2623600A09409 /* ListViewController.xib */; };
 		B5924F422BF262A500A09409 /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5924F412BF262A500A09409 /* ListViewModel.swift */; };
+		B5924F452BF2644600A09409 /* ServiceProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5924F442BF2644600A09409 /* ServiceProvider.swift */; };
+		B5924F492BF2649E00A09409 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5924F472BF2649E00A09409 /* Response.swift */; };
+		B5924F4A2BF2649E00A09409 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5924F482BF2649E00A09409 /* Router.swift */; };
+		B5924F4D2BF265A300A09409 /* PokemonUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5924F4B2BF265A300A09409 /* PokemonUseCase.swift */; };
+		B5924F4F2BF265F500A09409 /* PokemonListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5924F4E2BF265F500A09409 /* PokemonListResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +54,11 @@
 		B5924F302BF2621A00A09409 /* DataWowChallengeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataWowChallengeUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		B5924F3D2BF2623600A09409 /* ListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListViewController.xib; sourceTree = "<group>"; };
 		B5924F412BF262A500A09409 /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
+		B5924F442BF2644600A09409 /* ServiceProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceProvider.swift; sourceTree = "<group>"; };
+		B5924F472BF2649E00A09409 /* Response.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
+		B5924F482BF2649E00A09409 /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		B5924F4B2BF265A300A09409 /* PokemonUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PokemonUseCase.swift; sourceTree = "<group>"; };
+		B5924F4E2BF265F500A09409 /* PokemonListResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonListResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,11 +109,14 @@
 		B5924F0C2BF2621900A09409 /* DataWowChallenge */ = {
 			isa = PBXGroup;
 			children = (
-				B5924F3F2BF2626B00A09409 /* Scenes */,
 				B5924F0D2BF2621900A09409 /* AppDelegate.swift */,
 				B5924F162BF2621A00A09409 /* Assets.xcassets */,
-				B5924F182BF2621A00A09409 /* LaunchScreen.storyboard */,
 				B5924F1B2BF2621A00A09409 /* Info.plist */,
+				B5924F182BF2621A00A09409 /* LaunchScreen.storyboard */,
+				B5924F462BF2645A00A09409 /* Models */,
+				B5924F3F2BF2626B00A09409 /* Scenes */,
+				B5924F432BF2640000A09409 /* Services */,
+				B5924F4C2BF265A300A09409 /* UseCases */,
 			);
 			path = DataWowChallenge;
 			sourceTree = "<group>";
@@ -141,6 +154,32 @@
 				B5924F3D2BF2623600A09409 /* ListViewController.xib */,
 			);
 			path = List;
+			sourceTree = "<group>";
+		};
+		B5924F432BF2640000A09409 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				B5924F442BF2644600A09409 /* ServiceProvider.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		B5924F462BF2645A00A09409 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B5924F472BF2649E00A09409 /* Response.swift */,
+				B5924F482BF2649E00A09409 /* Router.swift */,
+				B5924F4E2BF265F500A09409 /* PokemonListResponse.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		B5924F4C2BF265A300A09409 /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				B5924F4B2BF265A300A09409 /* PokemonUseCase.swift */,
+			);
+			path = UseCases;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -274,9 +313,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B5924F4F2BF265F500A09409 /* PokemonListResponse.swift in Sources */,
+				B5924F452BF2644600A09409 /* ServiceProvider.swift in Sources */,
 				B5924F122BF2621900A09409 /* ListViewController.swift in Sources */,
 				B5924F0E2BF2621900A09409 /* AppDelegate.swift in Sources */,
 				B5924F422BF262A500A09409 /* ListViewModel.swift in Sources */,
+				B5924F4D2BF265A300A09409 /* PokemonUseCase.swift in Sources */,
+				B5924F4A2BF2649E00A09409 /* Router.swift in Sources */,
+				B5924F492BF2649E00A09409 /* Response.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

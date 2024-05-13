@@ -15,7 +15,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         window = UIWindow(frame: UIScreen.main.bounds)
         
-        // Initialize your view controller from the XIB file
         let viewController = ListViewController(nibName: "\(ListViewController.self)", bundle: nil)
         
         window?.rootViewController = viewController
