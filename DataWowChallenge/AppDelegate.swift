@@ -17,6 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let viewController = ListViewController(nibName: "\(ListViewController.self)", bundle: nil)
         
+        viewController.viewModel = ListViewModel()
         window?.rootViewController = viewController
         window?.makeKeyAndVisible()
         
