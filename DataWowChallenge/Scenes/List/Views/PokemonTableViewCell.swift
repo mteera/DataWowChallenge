@@ -6,10 +6,11 @@
 //
 
 import UIKit
+import Kingfisher
 
 struct PokemonTableViewCellDisplayModel {
     let name: String
-    let imageUrl: String
+    let imageUrl: URL?
 }
 
 final class PokemonTableViewCell: UITableViewCell {
@@ -26,6 +27,6 @@ final class PokemonTableViewCell: UITableViewCell {
     
     func configure(with configurable: PokemonTableViewCellDisplayModel) {
         titleLabel.text = configurable.name
-//        avatarImageView.kf.setImage(with: configurable.imageUrl)
+        avatarImageView.kf.setImage(with: configurable.imageUrl)
     }
 }

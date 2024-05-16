@@ -23,7 +23,7 @@ class PokemonUseCase: PokemonUseCaseProtocol {
         serviceProvider.request(router: Router.pokemonList, responseType: PokemonListResponse.self) { result in
             switch result {
             case .success(let response):
-                completion(.success(response.data))
+                completion(.success(response))
             case .failure(let error):
                 completion(.failure(error))
             }

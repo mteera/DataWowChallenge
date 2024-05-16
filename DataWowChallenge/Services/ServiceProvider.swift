@@ -15,7 +15,7 @@ enum NetworkError: Error {
 }
 
 class ServiceProvider {
-    func request<T: Decodable>(router: Router, responseType: T.Type, completion: @escaping (Result<Response<T>, NetworkError>) -> Void) {
+    func request<T: Decodable>(router: Router, responseType: T.Type, completion: @escaping (Result<T, NetworkError>) -> Void) {
         var request = URLRequest(url: router.url)
         
         URLSession.shared.dataTask(with: request) { data, response, error in
@@ -35,7 +35,7 @@ class ServiceProvider {
             }
             
             do {
-                let decodedData = try JSONDecoder().decode(Response<T>.self, from: data)
+                let decodedData = try JSONDecoder().decode(T.self, from: data)
                 completion(.success(decodedData))
             } catch {
                 completion(.failure(.decodingError))

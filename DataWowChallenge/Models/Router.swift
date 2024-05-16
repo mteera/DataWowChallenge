@@ -11,20 +11,26 @@ enum Router {
     case pokemonList
     
     var baseURL: URL {
-        switch self {
-        case .pokemonList:
-            return URL(string: "https://pokeapi.co/api/v2/")!
-        }
+        return URL(string: "https://pokeapi.co/api/v2/")!
     }
     
     var path: String {
         switch self {
         case .pokemonList:
-            return "pokemon?limit=100000&offset=0"
+            return "pokemon"
+        }
+    }
+    
+    var query: String {
+        switch self {
+        case .pokemonList:
+            return "limit=100000&offset=0"
         }
     }
     
     var url: URL {
-        return baseURL.appendingPathComponent(path)
+        var components = URLComponents(url: baseURL.appendingPathComponent(path), resolvingAgainstBaseURL: false)!
+        components.query = query
+        return components.url!
     }
 }

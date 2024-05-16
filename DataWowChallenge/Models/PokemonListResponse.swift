@@ -8,6 +8,5 @@
 import Foundation
 
 struct PokemonListResponse: Decodable {
-    let name: String
-    let url: String
+    let results: [PokemonItem]
 }

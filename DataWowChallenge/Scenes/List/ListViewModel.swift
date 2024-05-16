@@ -26,11 +26,31 @@ class ListViewModel: ListViewModelProtocol {
     
     var didLoadList: (([PokemonTableViewCellDisplayModel]) -> Void)?
     
+    let pokemonUseCase: PokemonUseCaseProtocol
+    
+    init(pokemonUseCase: PokemonUseCaseProtocol = PokemonUseCase()) {
+        self.pokemonUseCase = pokemonUseCase
+    }
+    
     func initialLoad() {
-        let list: [PokemonTableViewCellDisplayModel] = [
-            PokemonTableViewCellDisplayModel(name: "bulbasaur".capitalized, imageUrl: "https://pokeapi.co/api/v2/pokemon/1/")
-        ]
         
-        didLoadList?(list)
+        pokemonUseCase.fetchPokemonList { result in
+            switch result {
+            case .success(let response):
+                let list: [PokemonTableViewCellDisplayModel] = response.results.map { item -> PokemonTableViewCellDisplayModel in
+                    let imageUrl: URL? = URL(string: item.url)
+                    return PokemonTableViewCellDisplayModel(name: item.name, imageUrl: imageUrl)
+                }
+                
+                DispatchQueue.main.async { [weak self] in
+                    guard let self else { return }
+                    didLoadList?(list)
+                }
+            case .failure(let failure):
+                break
+            }
+        }
+        
+
     }
 }

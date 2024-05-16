@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		B531C0EE2BF399B6003F1023 /* PokemonTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B531C0ED2BF399B6003F1023 /* PokemonTableViewCell.xib */; };
 		B531C0EF2BF399B6003F1023 /* PokemonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B531C0EC2BF399B6003F1023 /* PokemonTableViewCell.swift */; };
+		B531C0F32BF3B46B003F1023 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = B531C0F22BF3B46B003F1023 /* Kingfisher */; };
+		B531C0F52BF3B96E003F1023 /* PokemonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B531C0F42BF3B96E003F1023 /* PokemonItem.swift */; };
 		B5924F0E2BF2621900A09409 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5924F0D2BF2621900A09409 /* AppDelegate.swift */; };
 		B5924F122BF2621900A09409 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5924F112BF2621900A09409 /* ListViewController.swift */; };
 		B5924F172BF2621A00A09409 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5924F162BF2621A00A09409 /* Assets.xcassets */; };
@@ -19,7 +21,6 @@
 		B5924F3E2BF2623600A09409 /* ListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5924F3D2BF2623600A09409 /* ListViewController.xib */; };
 		B5924F422BF262A500A09409 /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5924F412BF262A500A09409 /* ListViewModel.swift */; };
 		B5924F452BF2644600A09409 /* ServiceProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5924F442BF2644600A09409 /* ServiceProvider.swift */; };
-		B5924F492BF2649E00A09409 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5924F472BF2649E00A09409 /* Response.swift */; };
 		B5924F4A2BF2649E00A09409 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5924F482BF2649E00A09409 /* Router.swift */; };
 		B5924F4D2BF265A300A09409 /* PokemonUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5924F4B2BF265A300A09409 /* PokemonUseCase.swift */; };
 		B5924F4F2BF265F500A09409 /* PokemonListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5924F4E2BF265F500A09409 /* PokemonListResponse.swift */; };
@@ -45,6 +46,7 @@
 /* Begin PBXFileReference section */
 		B531C0EC2BF399B6003F1023 /* PokemonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonTableViewCell.swift; sourceTree = "<group>"; };
 		B531C0ED2BF399B6003F1023 /* PokemonTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PokemonTableViewCell.xib; sourceTree = "<group>"; };
+		B531C0F42BF3B96E003F1023 /* PokemonItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonItem.swift; sourceTree = "<group>"; };
 		B5924F0A2BF2621900A09409 /* DataWowChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DataWowChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5924F0D2BF2621900A09409 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B5924F112BF2621900A09409 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
@@ -59,7 +61,6 @@
 		B5924F3D2BF2623600A09409 /* ListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListViewController.xib; sourceTree = "<group>"; };
 		B5924F412BF262A500A09409 /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
 		B5924F442BF2644600A09409 /* ServiceProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceProvider.swift; sourceTree = "<group>"; };
-		B5924F472BF2649E00A09409 /* Response.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 		B5924F482BF2649E00A09409 /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		B5924F4B2BF265A300A09409 /* PokemonUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PokemonUseCase.swift; sourceTree = "<group>"; };
 		B5924F4E2BF265F500A09409 /* PokemonListResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonListResponse.swift; sourceTree = "<group>"; };
@@ -70,6 +71,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B531C0F32BF3B46B003F1023 /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,6 +101,13 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		B531C0F12BF3B46B003F1023 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		B5924F012BF2621900A09409 = {
 			isa = PBXGroup;
 			children = (
@@ -106,6 +115,7 @@
 				B5924F232BF2621A00A09409 /* DataWowChallengeTests */,
 				B5924F2D2BF2621A00A09409 /* DataWowChallengeUITests */,
 				B5924F0B2BF2621900A09409 /* Products */,
+				B531C0F12BF3B46B003F1023 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -181,9 +191,9 @@
 		B5924F462BF2645A00A09409 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				B5924F472BF2649E00A09409 /* Response.swift */,
 				B5924F482BF2649E00A09409 /* Router.swift */,
 				B5924F4E2BF265F500A09409 /* PokemonListResponse.swift */,
+				B531C0F42BF3B96E003F1023 /* PokemonItem.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -212,6 +222,9 @@
 			dependencies = (
 			);
 			name = DataWowChallenge;
+			packageProductDependencies = (
+				B531C0F22BF3B46B003F1023 /* Kingfisher */,
+			);
 			productName = DataWowChallenge;
 			productReference = B5924F0A2BF2621900A09409 /* DataWowChallenge.app */;
 			productType = "com.apple.product-type.application";
@@ -284,6 +297,9 @@
 				Base,
 			);
 			mainGroup = B5924F012BF2621900A09409;
+			packageReferences = (
+				B531C0F02BF3B402003F1023 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+			);
 			productRefGroup = B5924F0B2BF2621900A09409 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -332,11 +348,11 @@
 				B5924F452BF2644600A09409 /* ServiceProvider.swift in Sources */,
 				B531C0EF2BF399B6003F1023 /* PokemonTableViewCell.swift in Sources */,
 				B5924F122BF2621900A09409 /* ListViewController.swift in Sources */,
+				B531C0F52BF3B96E003F1023 /* PokemonItem.swift in Sources */,
 				B5924F0E2BF2621900A09409 /* AppDelegate.swift in Sources */,
 				B5924F422BF262A500A09409 /* ListViewModel.swift in Sources */,
 				B5924F4D2BF265A300A09409 /* PokemonUseCase.swift in Sources */,
 				B5924F4A2BF2649E00A09409 /* Router.swift in Sources */,
-				B5924F492BF2649E00A09409 /* Response.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -673,6 +689,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		B531C0F02BF3B402003F1023 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.11.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		B531C0F22BF3B46B003F1023 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B531C0F02BF3B402003F1023 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = B5924F022BF2621900A09409 /* Project object */;
 }
