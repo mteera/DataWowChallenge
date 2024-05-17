@@ -15,11 +15,14 @@ class ListViewController: UIViewController {
     @IBOutlet private weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet private weak var tableView: UITableView!
     
+    private lazy var refreshControl: UIRefreshControl = UIRefreshControl()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         activityIndicator.startAnimating()
         setupTableView()
         setupBinding()
+        setupRefreshControl()
         viewModel?.input.initialLoad()
     }
     
@@ -28,6 +31,7 @@ class ListViewController: UIViewController {
             guard let self else { return }
             activityIndicator.stopAnimating()
             activityIndicator.isHidden = true
+            refreshControl.endRefreshing()
             list = displayModel
             tableView.reloadData()
         }
@@ -49,7 +53,12 @@ class ListViewController: UIViewController {
         tableView.register(UINib(nibName: "PokemonTableViewCell", bundle: nil), forCellReuseIdentifier: PokemonTableViewCell.identifier)
     }
     
-    func updatePlaceholder() {
+    private func setupRefreshControl() {
+        refreshControl.addTarget(self, action: #selector(refreshControlDidPull(_:)), for: .valueChanged)
+        tableView.refreshControl = refreshControl
+    }
+    
+    private func updatePlaceholder() {
         if list == nil || list?.isEmpty == true {
             let placeholderLabel = UILabel()
             placeholderLabel.text = "No data available"
@@ -59,6 +68,12 @@ class ListViewController: UIViewController {
         } else {
             tableView.backgroundView = nil
         }
+    }
+    
+    @objc func refreshControlDidPull(_ sender: UIRefreshControl) {
+        activityIndicator.startAnimating()
+        activityIndicator.isHidden = false
+        viewModel?.input.reloadData()
     }
 }
 

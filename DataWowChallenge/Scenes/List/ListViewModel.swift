@@ -10,6 +10,7 @@ import SVGKit
 
 protocol ListViewModelInput {
     func initialLoad()
+    func reloadData()
 }
 
 protocol ListViewModelOutput: AnyObject {
@@ -36,8 +37,16 @@ class ListViewModel: ListViewModelProtocol {
     }
     
     func initialLoad() {
+        fetchData()
+    }
+    
+    func reloadData() {
+        fetchData()
+    }
+    
+    private func fetchData() {
         pokemonUseCase.fetchPokemonList { [weak self] result in
-            guard let self else { return }
+            guard let self = self else { return }
             
             switch result {
             case .success(let response):
@@ -46,13 +55,13 @@ class ListViewModel: ListViewModelProtocol {
                 }
                 
                 DispatchQueue.main.async { [weak self] in
-                    guard let self else { return }
-                    didLoadList?(list)
+                    guard let self = self else { return }
+                    self.didLoadList?(list)
                 }
             case .failure(let failure):
                 DispatchQueue.main.async { [weak self] in
-                    guard let self else { return }
-                    didReceiveError?(failure.localizedDescription)
+                    guard let self = self else { return }
+                    self.didReceiveError?(failure.localizedDescription)
                 }
             }
         }
