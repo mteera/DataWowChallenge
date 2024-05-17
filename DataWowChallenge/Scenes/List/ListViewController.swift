@@ -48,17 +48,32 @@ class ListViewController: UIViewController {
         tableView.dataSource = self
         tableView.register(UINib(nibName: "PokemonTableViewCell", bundle: nil), forCellReuseIdentifier: PokemonTableViewCell.identifier)
     }
+    
+    func updatePlaceholder() {
+        if list == nil || list?.isEmpty == true {
+            let placeholderLabel = UILabel()
+            placeholderLabel.text = "No data available"
+            placeholderLabel.textAlignment = .center
+            placeholderLabel.textColor = .gray
+            tableView.backgroundView = placeholderLabel
+        } else {
+            tableView.backgroundView = nil
+        }
+    }
 }
 
 // MARK: - UITableViewDataSource
 extension ListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return list?.count ?? .zero
+        let count = list?.count ?? .zero
+        updatePlaceholder()
+        return count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: PokemonTableViewCell.identifier, for: indexPath) as? PokemonTableViewCell, let cellModel = list?[indexPath.row] else { return UITableViewCell() }
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: PokemonTableViewCell.identifier, for: indexPath) as? PokemonTableViewCell, let cellModel = list?[indexPath.row] else {
+            return UITableViewCell()
+        }
         cell.configure(with: cellModel)
         return cell
     }
