@@ -18,7 +18,6 @@ class DetailsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Details"
         
         activityIndicator.startAnimating()
         setupTableView()
@@ -33,6 +32,16 @@ class DetailsViewController: UIViewController {
             activityIndicator.isHidden = true
             self.sections = sections
             tableView.reloadData()
+        }
+        
+        viewModel?.output.didReceiveError = { [weak self] message in
+            guard let self = self else { return }
+            self.activityIndicator.stopAnimating()
+            self.activityIndicator.isHidden = true
+            
+            let alert = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
         }
     }
     
