@@ -12,10 +12,12 @@ class ListViewController: UIViewController {
     var viewModel: ListViewModel?
     private var list: [PokemonTableViewCellDisplayModel]?
     
+    @IBOutlet private weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet private weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        activityIndicator.startAnimating()
         setupTableView()
         setupBinding()
         viewModel?.input.initialLoad()
@@ -24,6 +26,8 @@ class ListViewController: UIViewController {
     private func setupBinding() {
         viewModel?.output.didLoadList = { [weak self] displayModel in
             guard let self else { return }
+            activityIndicator.stopAnimating()
+            activityIndicator.isHidden = true
             list = displayModel
             tableView.reloadData()
         }

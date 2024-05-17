@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ListViewController" customModule="DataWowChallenge" customModuleProvider="target">
             <connections>
+                <outlet property="activityIndicator" destination="3HJ-Ti-Jfz" id="ZLb-iP-sch"/>
                 <outlet property="tableView" destination="q13-q0-IH7" id="2H5-c4-TTt"/>
                 <outlet property="view" destination="GrE-bM-QsG" id="h8M-f9-kaE"/>
             </connections>
@@ -23,6 +24,9 @@
                     <rect key="frame" x="0.0" y="59" width="393" height="759"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </tableView>
+                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="3HJ-Ti-Jfz">
+                    <rect key="frame" x="178" y="407.66666666666669" width="37" height="37"/>
+                </activityIndicatorView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="cUN-Ze-L00"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -30,7 +34,9 @@
                 <constraint firstItem="cUN-Ze-L00" firstAttribute="trailing" secondItem="q13-q0-IH7" secondAttribute="trailing" id="2Mh-jH-ulE"/>
                 <constraint firstItem="q13-q0-IH7" firstAttribute="top" secondItem="cUN-Ze-L00" secondAttribute="top" id="8At-QY-pE4"/>
                 <constraint firstItem="cUN-Ze-L00" firstAttribute="bottom" secondItem="q13-q0-IH7" secondAttribute="bottom" id="aKN-tL-Bvj"/>
+                <constraint firstItem="3HJ-Ti-Jfz" firstAttribute="centerY" secondItem="GrE-bM-QsG" secondAttribute="centerY" id="bl3-QS-S6g"/>
                 <constraint firstItem="q13-q0-IH7" firstAttribute="leading" secondItem="cUN-Ze-L00" secondAttribute="leading" id="knL-Bv-5Bz"/>
+                <constraint firstItem="3HJ-Ti-Jfz" firstAttribute="centerX" secondItem="GrE-bM-QsG" secondAttribute="centerX" id="x9l-93-cyW"/>
             </constraints>
             <point key="canvasLocation" x="-230" y="-348"/>
         </view>
