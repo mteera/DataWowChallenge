@@ -6,11 +6,11 @@
 //
 
 import Foundation
-import SVGKit
 
 protocol ListViewModelInput {
     func initialLoad()
     func reloadData()
+    func search(with query: String)
 }
 
 protocol ListViewModelOutput: AnyObject {
@@ -30,6 +30,8 @@ class ListViewModel: ListViewModelProtocol {
     var didLoadList: (([PokemonTableViewCellDisplayModel]) -> Void)?
     var didReceiveError: ((String) -> Void)?
     
+    private var pokemonListResponse: PokemonListResponse?
+    
     let pokemonUseCase: PokemonUseCaseProtocol
     
     init(pokemonUseCase: PokemonUseCaseProtocol = PokemonUseCase()) {
@@ -44,15 +46,27 @@ class ListViewModel: ListViewModelProtocol {
         fetchData()
     }
     
+    func search(with query: String) {
+        if query.isEmpty {
+            let list: [PokemonTableViewCellDisplayModel] = makePokemonTableViewCellDisplayModels(from: pokemonListResponse?.results ?? [])
+            return
+        }
+        
+        let filteredList = pokemonListResponse?.results.filter { $0.name.localizedCaseInsensitiveContains(query) } ?? []
+        let list: [PokemonTableViewCellDisplayModel] = makePokemonTableViewCellDisplayModels(from: filteredList)
+
+        didLoadList?(list)
+    }
+
+    
     private func fetchData() {
         pokemonUseCase.fetchPokemonList { [weak self] result in
             guard let self = self else { return }
             
             switch result {
             case .success(let response):
-                let list: [PokemonTableViewCellDisplayModel] = response.results.map { item -> PokemonTableViewCellDisplayModel in
-                    return PokemonTableViewCellDisplayModel(name: item.name.capitalized)
-                }
+                pokemonListResponse = response
+                let list: [PokemonTableViewCellDisplayModel] = makePokemonTableViewCellDisplayModels(from: response.results)
                 
                 DispatchQueue.main.async { [weak self] in
                     guard let self = self else { return }
@@ -64,6 +78,12 @@ class ListViewModel: ListViewModelProtocol {
                     self.didReceiveError?(failure.localizedDescription)
                 }
             }
+        }
+    }
+    
+    private func makePokemonTableViewCellDisplayModels(from items: [PokemonItem]) -> [PokemonTableViewCellDisplayModel] {
+        items.map { item -> PokemonTableViewCellDisplayModel in
+            return PokemonTableViewCellDisplayModel(name: item.name.capitalized)
         }
     }
 }

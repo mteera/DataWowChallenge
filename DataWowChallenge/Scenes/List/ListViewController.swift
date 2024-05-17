@@ -1,10 +1,3 @@
-//
-//  ListViewController.swift
-//  DataWowChallenge
-//
-//  Created by Chace Teera on 13/5/2567 BE.
-//
-
 import UIKit
 
 class ListViewController: UIViewController {
@@ -14,8 +7,13 @@ class ListViewController: UIViewController {
     
     @IBOutlet private weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet private weak var tableView: UITableView!
+    @IBOutlet private weak var searchBar: UISearchBar!
     
-    private lazy var refreshControl: UIRefreshControl = UIRefreshControl()
+    private lazy var refreshControl: UIRefreshControl = {
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(refreshControlDidPull(_:)), for: .valueChanged)
+        return refreshControl
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,49 +21,48 @@ class ListViewController: UIViewController {
         title = "Pokemon List"
         activityIndicator.startAnimating()
         setupTableView()
+        setupSearchBar()
         setupBinding()
-        setupRefreshControl()
         viewModel?.input.initialLoad()
     }
     
     private func setupBinding() {
         viewModel?.output.didLoadList = { [weak self] displayModel in
-            guard let self else { return }
-            activityIndicator.stopAnimating()
-            activityIndicator.isHidden = true
-            refreshControl.endRefreshing()
-            refreshControl.isHidden = true
-
-            list = displayModel
-            tableView.reloadData()
-            updatePlaceholder()
+            guard let self = self else { return }
+            self.activityIndicator.stopAnimating()
+            self.activityIndicator.isHidden = true
+            self.refreshControl.endRefreshing()
+            self.refreshControl.isHidden = true
+            
+            self.list = displayModel
+            self.tableView.reloadData()
+            self.updatePlaceholder()
         }
         
         viewModel?.output.didReceiveError = { [weak self] message in
             guard let self = self else { return }
-            activityIndicator.stopAnimating()
-            activityIndicator.isHidden = true
-            refreshControl.endRefreshing()
-            refreshControl.isHidden = true
-
-            updatePlaceholder()
+            self.activityIndicator.stopAnimating()
+            self.activityIndicator.isHidden = true
+            self.refreshControl.endRefreshing()
+            self.refreshControl.isHidden = true
+            
+            self.updatePlaceholder()
             
             let alert = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-            present(alert, animated: true, completion: nil)
+            self.present(alert, animated: true, completion: nil)
         }
-
     }
     
     private func setupTableView() {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(UINib(nibName: "PokemonTableViewCell", bundle: nil), forCellReuseIdentifier: PokemonTableViewCell.identifier)
+        tableView.refreshControl = refreshControl
     }
     
-    private func setupRefreshControl() {
-        refreshControl.addTarget(self, action: #selector(refreshControlDidPull(_:)), for: .valueChanged)
-        tableView.refreshControl = refreshControl
+    private func setupSearchBar() {
+        searchBar.delegate = self
     }
     
     private func updatePlaceholder() {
@@ -80,9 +77,7 @@ class ListViewController: UIViewController {
         }
     }
     
-    @objc func refreshControlDidPull(_ sender: UIRefreshControl) {
-        activityIndicator.startAnimating()
-        activityIndicator.isHidden = false
+    @objc private func refreshControlDidPull(_ sender: UIRefreshControl) {
         viewModel?.input.reloadData()
     }
 }
@@ -90,17 +85,17 @@ class ListViewController: UIViewController {
 // MARK: - UITableViewDataSource
 extension ListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let count = list?.count ?? .zero
-        return count
+        return list?.count ?? .zero
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard
-            let cell = tableView.dequeueReusableCell(withIdentifier: PokemonTableViewCell.identifier, for: indexPath) as? PokemonTableViewCell,
-            let cellModel = list?[indexPath.row] else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: PokemonTableViewCell.identifier, for: indexPath) as? PokemonTableViewCell, let pokemon = list?[indexPath.row] else {
             return UITableViewCell()
         }
-        cell.configure(with: cellModel)
+        
+        
+        cell.configure(with: pokemon)
+        
         return cell
     }
 }
@@ -113,5 +108,12 @@ extension ListViewController: UITableViewDelegate {
         let detailsViewController = DetailsViewController()
         detailsViewController.viewModel = DetailsViewModel(context: DetailsViewContext(name: details.name))
         navigationController?.pushViewController(detailsViewController, animated: true)
+    }
+}
+
+// MARK: - UISearchBarDelegate
+extension ListViewController: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        viewModel?.input.search(with: searchText)
     }
 }
