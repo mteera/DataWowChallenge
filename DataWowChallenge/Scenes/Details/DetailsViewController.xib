@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DetailsViewController" customModule="DataWowChallenge" customModuleProvider="target">
             <connections>
+                <outlet property="activityIndicator" destination="ybQ-eZ-sW1" id="pFD-Wf-jlH"/>
                 <outlet property="tableView" destination="ze4-Cm-LVG" id="pwU-iJ-EeD"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -23,12 +24,17 @@
                     <rect key="frame" x="0.0" y="59" width="393" height="759"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </tableView>
+                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="ybQ-eZ-sW1">
+                    <rect key="frame" x="178" y="407.66666666666669" width="37" height="37"/>
+                </activityIndicatorView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="ze4-Cm-LVG" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="2em-6q-Co0"/>
+                <constraint firstItem="ybQ-eZ-sW1" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="2jn-Vj-03U"/>
                 <constraint firstItem="ze4-Cm-LVG" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="9kG-pl-nyb"/>
+                <constraint firstItem="ybQ-eZ-sW1" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="LMV-cK-AyD"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ze4-Cm-LVG" secondAttribute="trailing" id="MXA-D6-ghU"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="ze4-Cm-LVG" secondAttribute="bottom" id="il1-M9-zJ3"/>
             </constraints>

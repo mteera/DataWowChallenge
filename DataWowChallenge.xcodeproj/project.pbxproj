@@ -11,6 +11,7 @@
 		B531C0EF2BF399B6003F1023 /* PokemonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B531C0EC2BF399B6003F1023 /* PokemonTableViewCell.swift */; };
 		B531C0F32BF3B46B003F1023 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = B531C0F22BF3B46B003F1023 /* Kingfisher */; };
 		B531C0F52BF3B96E003F1023 /* PokemonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B531C0F42BF3B96E003F1023 /* PokemonItem.swift */; };
+		B56547962BF774CD0029E1B9 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56547952BF774CD0029E1B9 /* UIView+Extension.swift */; };
 		B5797A642BF6665100CBEB34 /* ImageURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5797A632BF6665100CBEB34 /* ImageURL.swift */; };
 		B5797A672BF66AE900CBEB34 /* SVGKit in Frameworks */ = {isa = PBXBuildFile; productRef = B5797A662BF66AE900CBEB34 /* SVGKit */; };
 		B5797A6E2BF6F53100CBEB34 /* DetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5797A6D2BF6F53100CBEB34 /* DetailsViewController.xib */; };
@@ -22,6 +23,8 @@
 		B5797A7B2BF7486800CBEB34 /* TypeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5797A7A2BF7486800CBEB34 /* TypeView.xib */; };
 		B58120172BF751F5006DEBBB /* DetailsHeroTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B58120162BF751F5006DEBBB /* DetailsHeroTableViewCell.xib */; };
 		B58120182BF751F5006DEBBB /* DetailsHeroTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58120152BF751F5006DEBBB /* DetailsHeroTableViewCell.swift */; };
+		B581201A2BF756C6006DEBBB /* DetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58120192BF756C6006DEBBB /* DetailsViewModel.swift */; };
+		B581201C2BF75BC2006DEBBB /* PokemonDetailsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B581201B2BF75BC2006DEBBB /* PokemonDetailsResponse.swift */; };
 		B5924F0E2BF2621900A09409 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5924F0D2BF2621900A09409 /* AppDelegate.swift */; };
 		B5924F122BF2621900A09409 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5924F112BF2621900A09409 /* ListViewController.swift */; };
 		B5924F172BF2621A00A09409 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5924F162BF2621A00A09409 /* Assets.xcassets */; };
@@ -58,6 +61,7 @@
 		B531C0EC2BF399B6003F1023 /* PokemonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonTableViewCell.swift; sourceTree = "<group>"; };
 		B531C0ED2BF399B6003F1023 /* PokemonTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PokemonTableViewCell.xib; sourceTree = "<group>"; };
 		B531C0F42BF3B96E003F1023 /* PokemonItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonItem.swift; sourceTree = "<group>"; };
+		B56547952BF774CD0029E1B9 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		B5797A632BF6665100CBEB34 /* ImageURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageURL.swift; sourceTree = "<group>"; };
 		B5797A6C2BF6F53100CBEB34 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		B5797A6D2BF6F53100CBEB34 /* DetailsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailsViewController.xib; sourceTree = "<group>"; };
@@ -68,6 +72,8 @@
 		B5797A7A2BF7486800CBEB34 /* TypeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TypeView.xib; sourceTree = "<group>"; };
 		B58120152BF751F5006DEBBB /* DetailsHeroTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsHeroTableViewCell.swift; sourceTree = "<group>"; };
 		B58120162BF751F5006DEBBB /* DetailsHeroTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailsHeroTableViewCell.xib; sourceTree = "<group>"; };
+		B58120192BF756C6006DEBBB /* DetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewModel.swift; sourceTree = "<group>"; };
+		B581201B2BF75BC2006DEBBB /* PokemonDetailsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonDetailsResponse.swift; sourceTree = "<group>"; };
 		B5924F0A2BF2621900A09409 /* DataWowChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DataWowChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5924F0D2BF2621900A09409 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B5924F112BF2621900A09409 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
@@ -133,6 +139,7 @@
 		B5797A682BF66B8E00CBEB34 /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				B56547952BF774CD0029E1B9 /* UIView+Extension.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -145,6 +152,7 @@
 				B5797A6C2BF6F53100CBEB34 /* DetailsViewController.swift */,
 				B5797A6D2BF6F53100CBEB34 /* DetailsViewController.xib */,
 				B5797A702BF7435E00CBEB34 /* DetailsViewSection.swift */,
+				B58120192BF756C6006DEBBB /* DetailsViewModel.swift */,
 			);
 			path = Details;
 			sourceTree = "<group>";
@@ -274,6 +282,7 @@
 				B5924F4E2BF265F500A09409 /* PokemonListResponse.swift */,
 				B531C0F42BF3B96E003F1023 /* PokemonItem.swift */,
 				B5797A632BF6665100CBEB34 /* ImageURL.swift */,
+				B581201B2BF75BC2006DEBBB /* PokemonDetailsResponse.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -433,13 +442,16 @@
 				B5797A762BF7453100CBEB34 /* DetailsInformationTableViewCell.swift in Sources */,
 				B58120182BF751F5006DEBBB /* DetailsHeroTableViewCell.swift in Sources */,
 				B5924F4F2BF265F500A09409 /* PokemonListResponse.swift in Sources */,
+				B581201A2BF756C6006DEBBB /* DetailsViewModel.swift in Sources */,
 				B5797A712BF7435E00CBEB34 /* DetailsViewSection.swift in Sources */,
 				B5924F452BF2644600A09409 /* ServiceProvider.swift in Sources */,
 				B531C0EF2BF399B6003F1023 /* PokemonTableViewCell.swift in Sources */,
+				B581201C2BF75BC2006DEBBB /* PokemonDetailsResponse.swift in Sources */,
 				B5797A6F2BF6F53100CBEB34 /* DetailsViewController.swift in Sources */,
 				B5924F122BF2621900A09409 /* ListViewController.swift in Sources */,
 				B531C0F52BF3B96E003F1023 /* PokemonItem.swift in Sources */,
 				B5797A792BF7480400CBEB34 /* TypeView.swift in Sources */,
+				B56547962BF774CD0029E1B9 /* UIView+Extension.swift in Sources */,
 				B5924F0E2BF2621900A09409 /* AppDelegate.swift in Sources */,
 				B5924F422BF262A500A09409 /* ListViewModel.swift in Sources */,
 				B5797A642BF6665100CBEB34 /* ImageURL.swift in Sources */,

@@ -11,7 +11,6 @@ struct DetailsInformationTableViewCellDisplayModel {
     let name: String
     let number: String
     let types: [String]
-    let description: String
 }
 
 class DetailsInformationTableViewCell: UITableViewCell {
@@ -20,7 +19,6 @@ class DetailsInformationTableViewCell: UITableViewCell {
     @IBOutlet private weak var nameLabel: UILabel!
     @IBOutlet private weak var numberLabel: UILabel!
     @IBOutlet private weak var typeStackView: UIStackView!
-    @IBOutlet private weak var descriptionLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -28,14 +26,12 @@ class DetailsInformationTableViewCell: UITableViewCell {
         typeStackView.removeAllArrangedSubviews()
         nameLabel.text = ""
         numberLabel.text = ""
-        descriptionLabel.text = ""
     }
     
     func configure(with configurable: DetailsInformationTableViewCellDisplayModel) {
         backgroundColor = .white
         nameLabel.text = configurable.name
-        numberLabel.text = configurable.number
-        descriptionLabel.text = configurable.description
+        numberLabel.text = "#\(configurable.number)"
         
         typeStackView.removeAllArrangedSubviews()
         configurable.types.forEach { type in

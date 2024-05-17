@@ -8,6 +8,6 @@
 import Foundation
 
 enum DetailsViewSection {
-    case hero(DetailsInformationTableViewCellDisplayModel)
-    case information(DetailsHeroTableViewCellDisplayModel)
+    case hero(DetailsHeroTableViewCellDisplayModel)
+    case information(DetailsInformationTableViewCellDisplayModel)
 }

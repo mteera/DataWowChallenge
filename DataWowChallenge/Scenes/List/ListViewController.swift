@@ -108,8 +108,10 @@ extension ListViewController: UITableViewDataSource {
 // MARK: - UITableViewDelegate
 extension ListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let detailData = list?[indexPath.row] else { return }
+        guard let details = list?[indexPath.row] else { return }
+        
         let detailsViewController = DetailsViewController()
+        detailsViewController.viewModel = DetailsViewModel(context: DetailsViewContext(name: details.name))
         navigationController?.pushViewController(detailsViewController, animated: true)
     }
 }

@@ -15,8 +15,24 @@ class TypeView: UIView {
     
     @IBOutlet private weak var valueLabel: UILabel!
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
+    override func layoutSubviews() {
+        super.layoutSubviews()
+
+        layer.cornerRadius = frame.height / 2
+        layer.borderWidth = 1
+        layer.borderColor = UIColor.black.cgColor
+    }
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        loadViewFromNib(owner: self)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        loadViewFromNib(owner: self)
+        
+
     }
     
     func configure(with configurable: TypeViewDisplayModel) {

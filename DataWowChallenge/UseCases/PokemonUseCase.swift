@@ -9,6 +9,7 @@ import Foundation
 
 protocol PokemonUseCaseProtocol {
     func fetchPokemonList(completion: @escaping (Result<PokemonListResponse, NetworkError>) -> Void)
+    func fetchPokemonDetails(name: String, completion: @escaping (Result<PokemonDetailsResponse, NetworkError>) -> Void)
 }
 
 class PokemonUseCase: PokemonUseCaseProtocol {
@@ -21,6 +22,21 @@ class PokemonUseCase: PokemonUseCaseProtocol {
     
     func fetchPokemonList(completion: @escaping (Result<PokemonListResponse, NetworkError>) -> Void) {
         serviceProvider.request(router: Router.pokemonList, responseType: PokemonListResponse.self) { result in
+            switch result {
+            case .success(let response):
+                completion(.success(response))
+            case .failure(let error):
+                completion(.failure(error))
+            }
+        }
+    }
+    
+    func fetchPokemonDetails(name: String, completion: @escaping (Result<PokemonDetailsResponse, NetworkError>) -> Void) {
+        serviceProvider.request(
+            router: Router.pokemonDetails(name: name),
+            responseType: PokemonDetailsResponse.self
+        ) { result in
+            
             switch result {
             case .success(let response):
                 completion(.success(response))
