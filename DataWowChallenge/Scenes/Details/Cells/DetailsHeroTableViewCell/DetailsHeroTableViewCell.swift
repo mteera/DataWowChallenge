@@ -23,19 +23,14 @@ class DetailsHeroTableViewCell: UITableViewCell {
     }
     
     func configure(with configurable: DetailsHeroTableViewCellDisplayModel) {
-
-        if let imageUrl = configurable.imageUrl {
-            if let svgImage = SVGKImage(contentsOf: imageUrl) {
-                DispatchQueue.main.async { [weak self] in
-                    guard let self else { return }
-                    heroImageView.image = svgImage.uiImage
-                }
-            } else {
-                print("Failed to load SVG image from URL: \(imageUrl)")
-                DispatchQueue.main.async { [weak self] in
-                    guard let self else { return }
-                    heroImageView.image = nil
-                }
+        
+        guard let imageUrl = configurable.imageUrl else { return }
+        
+        ImageURL.getDataFromImageUrl(url: imageUrl) { data, error in
+            let svgImage = SVGKImage(data: data)
+            DispatchQueue.main.async { [weak self] in
+                guard let self else { return }
+                heroImageView.image = svgImage?.uiImage
             }
         }
     }

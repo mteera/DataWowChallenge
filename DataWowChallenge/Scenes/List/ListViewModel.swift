@@ -54,10 +54,10 @@ class ListViewModel: ListViewModelProtocol {
         
         let filteredList = pokemonListResponse?.results.filter { $0.name.localizedCaseInsensitiveContains(query) } ?? []
         let list: [PokemonTableViewCellDisplayModel] = makePokemonTableViewCellDisplayModels(from: filteredList)
-
+        
         didLoadList?(list)
     }
-
+    
     
     private func fetchData() {
         pokemonUseCase.fetchPokemonList { [weak self] result in
@@ -83,7 +83,26 @@ class ListViewModel: ListViewModelProtocol {
     
     private func makePokemonTableViewCellDisplayModels(from items: [PokemonItem]) -> [PokemonTableViewCellDisplayModel] {
         items.map { item -> PokemonTableViewCellDisplayModel in
-            return PokemonTableViewCellDisplayModel(name: item.name.capitalized)
+            let id: String = getPokemonId(from: item.url)
+            return PokemonTableViewCellDisplayModel(
+                name: item.name.capitalized,
+                imageUrl: ImageURL.url(for: id)
+            )
+        }
+    }
+    
+    private func getPokemonId(from url: String) -> String {
+        guard let url = URL(string: url),
+              let lastPathComponent = url.pathComponents.last else {
+            return ""
+        }
+        
+        let components = lastPathComponent.components(separatedBy: "/")
+        
+        if let idString = components.last, let _ = Int(idString) {
+            return idString
+        } else {
+            return ""
         }
     }
 }

@@ -14,4 +14,14 @@ struct ImageURL {
         let urlString = baseURL + id + ".svg"
         return URL(string: urlString)
     }
+    
+    static func getDataFromImageUrl(url: URL, completion: @escaping (Data?, Error?) -> Void) {
+        URLSession.shared.dataTask(with: url) { data, response, error in
+            guard let data = data, error == nil else {
+                completion(nil, error)
+                return
+            }
+            completion(data, nil)
+        }.resume()
+    }
 }
