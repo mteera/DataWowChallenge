@@ -14,6 +14,7 @@ protocol ListViewModelInput {
 
 protocol ListViewModelOutput: AnyObject {
     var didLoadList: (([PokemonTableViewCellDisplayModel]) -> Void)? { get set }
+    var didReceiveError: ((String) -> Void)? { get set }
 }
 
 protocol ListViewModelProtocol: ListViewModelInput, ListViewModelOutput {
@@ -26,6 +27,7 @@ class ListViewModel: ListViewModelProtocol {
     var output: ListViewModelOutput { self }
     
     var didLoadList: (([PokemonTableViewCellDisplayModel]) -> Void)?
+    var didReceiveError: ((String) -> Void)?
     
     let pokemonUseCase: PokemonUseCaseProtocol
     
@@ -48,7 +50,10 @@ class ListViewModel: ListViewModelProtocol {
                     didLoadList?(list)
                 }
             case .failure(let failure):
-                break
+                DispatchQueue.main.async { [weak self] in
+                    guard let self else { return }
+                    didReceiveError?(failure.localizedDescription)
+                }
             }
         }
     }

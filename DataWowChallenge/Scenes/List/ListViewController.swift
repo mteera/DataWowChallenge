@@ -31,6 +31,17 @@ class ListViewController: UIViewController {
             list = displayModel
             tableView.reloadData()
         }
+        
+        viewModel?.output.didReceiveError = { [weak self] message in
+            guard let self = self else { return }
+            activityIndicator.stopAnimating()
+            activityIndicator.isHidden = true
+            
+            let alert = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            present(alert, animated: true, completion: nil)
+        }
+
     }
     
     private func setupTableView() {
