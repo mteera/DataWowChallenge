@@ -42,7 +42,7 @@ class ListViewModel: ListViewModelProtocol {
             switch result {
             case .success(let response):
                 let list: [PokemonTableViewCellDisplayModel] = response.results.map { item -> PokemonTableViewCellDisplayModel in
-                    return PokemonTableViewCellDisplayModel(name: item.name)
+                    return PokemonTableViewCellDisplayModel(name: item.name.capitalized)
                 }
                 
                 DispatchQueue.main.async { [weak self] in
