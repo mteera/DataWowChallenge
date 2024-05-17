@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SVGKit
 
 protocol ListViewModelInput {
     func initialLoad()
@@ -33,13 +34,13 @@ class ListViewModel: ListViewModelProtocol {
     }
     
     func initialLoad() {
-        
-        pokemonUseCase.fetchPokemonList { result in
+        pokemonUseCase.fetchPokemonList { [weak self] result in
+            guard let self else { return }
+            
             switch result {
             case .success(let response):
                 let list: [PokemonTableViewCellDisplayModel] = response.results.map { item -> PokemonTableViewCellDisplayModel in
-                    let imageUrl: URL? = URL(string: item.url)
-                    return PokemonTableViewCellDisplayModel(name: item.name, imageUrl: imageUrl)
+                    return PokemonTableViewCellDisplayModel(name: item.name)
                 }
                 
                 DispatchQueue.main.async { [weak self] in
@@ -50,7 +51,5 @@ class ListViewModel: ListViewModelProtocol {
                 break
             }
         }
-        
-
     }
 }

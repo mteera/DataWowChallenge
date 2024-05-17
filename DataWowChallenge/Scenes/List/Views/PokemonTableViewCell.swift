@@ -7,18 +7,17 @@
 
 import UIKit
 import Kingfisher
+import SVGKit
 
 struct PokemonTableViewCellDisplayModel {
     let name: String
-    let imageUrl: URL?
 }
 
 final class PokemonTableViewCell: UITableViewCell {
     static let identifier = "\(PokemonTableViewCell.self)"
     
-    @IBOutlet private weak var avatarImageView: UIImageView!
     @IBOutlet private weak var titleLabel: UILabel!
-    
+
     override func awakeFromNib() {
         super.awakeFromNib()
         backgroundColor = .clear
@@ -27,6 +26,5 @@ final class PokemonTableViewCell: UITableViewCell {
     
     func configure(with configurable: PokemonTableViewCellDisplayModel) {
         titleLabel.text = configurable.name
-        avatarImageView.kf.setImage(with: configurable.imageUrl)
     }
 }

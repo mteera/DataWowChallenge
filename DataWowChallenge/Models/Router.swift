@@ -24,7 +24,7 @@ enum Router {
     var query: String {
         switch self {
         case .pokemonList:
-            return "limit=100000&offset=0"
+            return "limit=50&offset=0"
         }
     }
     
