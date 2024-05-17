@@ -32,6 +32,8 @@ class ListViewController: UIViewController {
             activityIndicator.stopAnimating()
             activityIndicator.isHidden = true
             refreshControl.endRefreshing()
+            refreshControl.isHidden = true
+
             list = displayModel
             tableView.reloadData()
             updatePlaceholder()
@@ -41,6 +43,9 @@ class ListViewController: UIViewController {
             guard let self = self else { return }
             activityIndicator.stopAnimating()
             activityIndicator.isHidden = true
+            refreshControl.endRefreshing()
+            refreshControl.isHidden = true
+
             updatePlaceholder()
             
             let alert = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
