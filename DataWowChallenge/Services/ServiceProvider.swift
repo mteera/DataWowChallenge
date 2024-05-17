@@ -9,7 +9,7 @@ import Foundation
 
 enum NetworkError: Error {
     case invalidResponse
-    case decodingError
+    case decodingError(Error)
     case networkError(Error)
     case unknown
 }
@@ -38,7 +38,7 @@ class ServiceProvider {
                 let decodedData = try JSONDecoder().decode(T.self, from: data)
                 completion(.success(decodedData))
             } catch {
-                completion(.failure(.decodingError))
+                completion(.failure(.decodingError(error)))
             }
         }.resume()
     }
