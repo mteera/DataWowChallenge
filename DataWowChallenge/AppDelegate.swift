@@ -16,9 +16,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
         
         let viewController = ListViewController(nibName: "\(ListViewController.self)", bundle: nil)
-        
         viewController.viewModel = ListViewModel()
-        window?.rootViewController = viewController
+        
+        let navigationController = UINavigationController(rootViewController: viewController)
+        window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
         
         return true

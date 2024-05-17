@@ -19,6 +19,8 @@ class ListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        title = "Pokemon List"
         activityIndicator.startAnimating()
         setupTableView()
         setupBinding()
@@ -56,6 +58,7 @@ class ListViewController: UIViewController {
     }
     
     private func setupTableView() {
+        tableView.delegate = self
         tableView.dataSource = self
         tableView.register(UINib(nibName: "PokemonTableViewCell", bundle: nil), forCellReuseIdentifier: PokemonTableViewCell.identifier)
     }
@@ -92,10 +95,21 @@ extension ListViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: PokemonTableViewCell.identifier, for: indexPath) as? PokemonTableViewCell, let cellModel = list?[indexPath.row] else {
+        guard
+            let cell = tableView.dequeueReusableCell(withIdentifier: PokemonTableViewCell.identifier, for: indexPath) as? PokemonTableViewCell,
+            let cellModel = list?[indexPath.row] else {
             return UITableViewCell()
         }
         cell.configure(with: cellModel)
         return cell
+    }
+}
+
+// MARK: - UITableViewDelegate
+extension ListViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let detailData = list?[indexPath.row] else { return }
+        let detailsViewController = DetailsViewController()
+        navigationController?.pushViewController(detailsViewController, animated: true)
     }
 }
