@@ -34,12 +34,14 @@ class ListViewController: UIViewController {
             refreshControl.endRefreshing()
             list = displayModel
             tableView.reloadData()
+            updatePlaceholder()
         }
         
         viewModel?.output.didReceiveError = { [weak self] message in
             guard let self = self else { return }
             activityIndicator.stopAnimating()
             activityIndicator.isHidden = true
+            updatePlaceholder()
             
             let alert = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
@@ -81,7 +83,6 @@ class ListViewController: UIViewController {
 extension ListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let count = list?.count ?? .zero
-        updatePlaceholder()
         return count
     }
     
