@@ -15,6 +15,7 @@ struct DetailsInformationTableViewCellDisplayModel {
 }
 
 class DetailsInformationTableViewCell: UITableViewCell {
+    static let identifier = "\(DetailsInformationTableViewCell.self)"
 
     @IBOutlet private weak var nameLabel: UILabel!
     @IBOutlet private weak var numberLabel: UILabel!

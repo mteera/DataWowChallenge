@@ -12,6 +12,8 @@ struct DetailsHeroTableViewCellDisplayModel {
 }
 
 class DetailsHeroTableViewCell: UITableViewCell {
+    static let identifier = "\(DetailsHeroTableViewCell.self)"
+
     
     @IBOutlet private weak var heroImageView: UIImageView!
 
