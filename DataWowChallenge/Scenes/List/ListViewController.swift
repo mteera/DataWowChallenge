@@ -113,7 +113,16 @@ extension ListViewController: UITableViewDelegate {
 
 // MARK: - UISearchBarDelegate
 extension ListViewController: UISearchBarDelegate {
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        searchBar.returnKeyType = .done
+        searchBar.reloadInputViews()
+    }
+    
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         viewModel?.input.search(with: searchText)
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+         dismissKeyboard()
     }
 }
