@@ -20,7 +20,7 @@ class TypeView: UIView {
 
         layer.cornerRadius = frame.height / 2
         layer.borderWidth = 1
-        layer.borderColor = UIColor.black.cgColor
+        layer.borderColor = UIColor.systemGray.cgColor
     }
     
     override init(frame: CGRect) {

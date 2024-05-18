@@ -15,7 +15,7 @@ class DetailsHeroTableViewCell: UITableViewCell {
     static let identifier = "\(DetailsHeroTableViewCell.self)"
     
     @IBOutlet private weak var heroImageView: UIImageView!
-    @IBOutlet private weak var activityIndicator: UIActivityIndicatorView!
+
     override func awakeFromNib() {
         super.awakeFromNib()
         selectionStyle = .none

@@ -29,7 +29,8 @@ class DetailsInformationTableViewCell: UITableViewCell {
     }
     
     func configure(with configurable: DetailsInformationTableViewCellDisplayModel) {
-        backgroundColor = .white
+        backgroundColor = .systemBackground
+        
         nameLabel.text = configurable.name
         numberLabel.text = "#\(configurable.number)"
         
