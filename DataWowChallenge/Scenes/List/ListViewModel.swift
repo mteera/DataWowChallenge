@@ -49,6 +49,7 @@ class ListViewModel: ListViewModelProtocol {
     func search(with query: String) {
         if query.isEmpty {
             let list: [PokemonTableViewCellDisplayModel] = makePokemonTableViewCellDisplayModels(from: pokemonListResponse?.results ?? [])
+            didLoadList?(list)
             return
         }
         
