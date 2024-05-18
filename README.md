@@ -33,7 +33,8 @@ Approximately 32 hours.
 Not included in this challenge.
 
 ## Libraries Used
-- [SVGKit](https://github.com/SVGKit/SVGKit): For asynchronous image loading and caching.
+- [SVGKit](https://github.com/SVGKit/SVGKit): For SVG image.
+- [Kingfisher](https://github.com/onevcat/Kingfisher): For asynchronous image loading and caching.
 
 ## License
 This project is licensed under the [MIT License](LICENSE).
