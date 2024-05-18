@@ -23,10 +23,11 @@ This project displays a list of Pokemon fetched from the PokeAPI, allowing users
 3. Build and run the project on a simulator or device.
 
 ### Time Spent
-Approximately 72 hours.
+Approximately 32 hours.
 
 ### Known Edge Cases and Limitations
 - SVG images may not load correctly on the first attempt due to asynchronous loading.
+- Unalbe to search by Pokemon id.
 
 ## Testing
 Not included in this challenge.
