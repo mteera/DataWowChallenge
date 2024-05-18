@@ -18,7 +18,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="yp9-t1-MSR">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="75"/>
+                        <rect key="frame" x="16" y="8" width="288" height="75"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8JG-MR-60F">
                                 <rect key="frame" x="0.0" y="0.0" width="75" height="75"/>
@@ -38,7 +38,7 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DSO-PI-wIU">
-                                <rect key="frame" x="91" y="27.333333333333343" width="229" height="20.333333333333329"/>
+                                <rect key="frame" x="91" y="27.333333333333336" width="197" height="20.333333333333336"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -47,10 +47,10 @@
                     </stackView>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="yp9-t1-MSR" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="Bod-Pi-LBr"/>
-                    <constraint firstItem="yp9-t1-MSR" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="WU8-ca-n54"/>
-                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="yp9-t1-MSR" secondAttribute="bottom" id="fyU-gk-uwA"/>
-                    <constraint firstAttribute="trailing" secondItem="yp9-t1-MSR" secondAttribute="trailing" id="jsW-Qd-1nM"/>
+                    <constraint firstItem="yp9-t1-MSR" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="Bod-Pi-LBr"/>
+                    <constraint firstItem="yp9-t1-MSR" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="WU8-ca-n54"/>
+                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="yp9-t1-MSR" secondAttribute="bottom" constant="8" id="fyU-gk-uwA"/>
+                    <constraint firstAttribute="trailing" secondItem="yp9-t1-MSR" secondAttribute="trailing" constant="16" id="jsW-Qd-1nM"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
