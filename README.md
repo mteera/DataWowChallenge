@@ -27,7 +27,7 @@ Approximately 32 hours.
 
 ### Known Edge Cases and Limitations
 - SVG images may not load correctly on the first attempt due to asynchronous loading.
-- Unalbe to search by Pokemon id.
+- Unable to search by Pokemon id.
 
 ## Testing
 Not included in this challenge.
