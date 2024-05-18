@@ -2,7 +2,7 @@
 
 ## Project Documentation
 ### Description
-This project displays a list of Pokemon fetched from the PokeAPI, allowing users to search for specific Pokémon by name and view their basic details in a separate screen.
+This project displays a list of Pokemon fetched from the [PokeAPI](https://pokeapi.co/), allowing users to search for specific Pokémon by name and view their basic details in a separate screen.
 
 ## Features
 - MVVM architecture with input-output bindings
