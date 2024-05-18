@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 import SVGKit
 
 struct PokemonTableViewCellDisplayModel {
@@ -21,7 +22,7 @@ final class PokemonTableViewCell: UITableViewCell {
     
     override func prepareForReuse() {
         super.prepareForReuse()
-        avatarImageView.image = nil
+        avatarImageView.kf.cancelDownloadTask()
     }
 
     override func awakeFromNib() {
@@ -35,12 +36,18 @@ final class PokemonTableViewCell: UITableViewCell {
         
         guard let imageUrl = configurable.imageUrl else { return }
         
-        ImageURL.getDataFromImageUrl(url: imageUrl) { data, error in
-            let svgImage = SVGKImage(data: data)
-            DispatchQueue.main.async { [weak self] in
-                guard let self else { return }
-                avatarImageView.image = svgImage?.uiImage
+        let loader = avatarImageView.superview?.showLoader()
+
+        avatarImageView.kf.setImage(
+            with: imageUrl,
+            options: [.processor(SVGImgProcessor())],
+            completionHandler: { [weak self] result in
+                guard let self = self else { return }
+                DispatchQueue.main.async { [weak self] in
+                    guard let self = self else { return }
+                    loader.map { self.avatarImageView.superview?.hideLoader(loader: $0) }
+                }
             }
-        }
+        )
     }
 }

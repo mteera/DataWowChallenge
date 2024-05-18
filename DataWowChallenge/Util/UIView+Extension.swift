@@ -18,4 +18,17 @@ extension UIView {
         contentView.frame = bounds
         addSubview(contentView)
     }
+    
+    func showLoader(style: UIActivityIndicatorView.Style = .medium) -> UIActivityIndicatorView {
+        let loader = UIActivityIndicatorView(style: style)
+        loader.center = self.center
+        loader.startAnimating()
+        self.addSubview(loader)
+        return loader
+    }
+    
+    func hideLoader(loader: UIActivityIndicatorView) {
+        loader.stopAnimating()
+        loader.removeFromSuperview()
+    }
 }
